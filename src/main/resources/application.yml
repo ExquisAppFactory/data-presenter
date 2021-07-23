@@ -1,0 +1,18 @@
+
+server:
+  port: 8041
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        streams:
+          binder:
+            configuration:
+              spring.json.trusted.packages: '*'
+        binder:
+          brokers: localhost:9092
+      function:
+        bindings:
+          processor-in-0: security-review-destination
+          processor-out-0: presenter-destination
